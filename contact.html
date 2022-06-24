@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="Bienvenue sur le site de Fruits Concept">
+    <title>Contact</title>
+    <link rel="stylesheet" href="fruitConcept.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@200;300;700;800&display=swap" rel="stylesheet">
+</head>
+<body id="contact">
+    <header>
+        <nav> 
+            <a href="fruitConcept.html" title="Retour à la page d'accueil">
+                <img id="logo" src="logo.png" alt="Fruit Concept">
+            </a>
+            <ul>
+                <li>
+                    <a href="fruitConcept.html" title="Aller à la page">Accueil</a>
+                </li>
+                
+                <li>
+                    <a href="about.html" title="Aller à la page">À propos de nous</a>
+                </li>
+                <li>
+                    <a href="commandes.html" title="Aller à la page">Commandes</a>
+                </li>
+                <li>
+                    <a href="comments.html" title="Aller à la page">Commentaires</a>
+                </li>
+                <li id="index">
+                    <a href="contact.html" title="Aller à la page">Contact</a>
+                </li>
+            </ul>
+        </nav>
+    </header>    
+
+    <main>
+        <h1>Contactez-nous</h1>
+
+        <p class="texte">Pour plus d’informations sur nos produits de fruits en conserve ou des questions supplémentaires, remplissez le formulaire et nous prendrons contact avec vous dès que possible. Chez <strong>Fruit Concept</strong> nous sommes heureux de répondre à vos questions et exigences avec une attention particulière et dans les plus brefs délais. Parce que nous voulons que l’expérience des clients, réel ou potentiel, soit aussi enrichissante que possible.</p>
+
+        <section>
+                
+                <article class="pageContact">
+                
+                    <label for="userFirstName">Prénom :</label>
+                    <input type="text" name="userFirstName" id="userFirstName" required>
+
+                    <label for="userLastName">Nom :</label>
+                    <input type="text" name="userLastName" id="userLastName" required>
+
+                    <label for="email">Adresse mail :</label>
+                    <input type="email" name="email" id="email" required>
+
+                    <label for="message">Message :</label>
+                    <textarea type="text" id="message" size="500" required></textarea>
+
+                    <button onclick = "contact()">Envoyer</button>
+                    
+                    <div id="divContact"><p id="reponseContact"></p></div>
+                
+                </article> 
+                
+        </section>
+
+
+    </main>
+
+
+    <footer>
+        <div class="centrageVertical">
+            <h2>Informations</h2>
+            <p>Site web réalisé dans le cadre de la formation<br>
+            <strong>Découverte des métiers de l'informatique</strong><br>
+            <a href="https://youtu.be/dQw4w9WgXcQ">World Wide Ouaip</a>  &copy;2022
+        </div>
+    </footer>
+
+    <script src="fruitConcept.js"></script>
+    
+        
+</body>

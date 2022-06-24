@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="Bienvenue sur le site de Fruits Concept">
+    <title>Commandes</title>
+    <link rel="stylesheet" href="fruitConcept.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@200;300;700;800&display=swap" rel="stylesheet">
+</head>
+<body id="commandes">
+    <header>
+        <nav> 
+            <a href="fruitConcept.html" title="Retour à la page d'accueil">
+                <img id="logo" src="logo.png" alt="Fruit Concept">
+            </a>
+            <ul>
+                <li>
+                    <a href="fruitConcept.html" title="Aller à la page">Accueil</a>
+                </li>
+                
+                <li>
+                    <a href="about.html" title="Aller à la page">À propos de nous</a>
+                </li>
+                <li id="index">
+                    <a href="commandes.html" title="Aller à la page">Commandes</a>
+                </li>
+                <li>
+                    <a href="comments.html" title="Aller à la page">Commentaires</a>
+                </li>
+                <li>
+                    <a href="contact.html" title="Aller à la page">Contact</a>
+                </li>
+            </ul>
+        </nav>
+    </header>    
+
+    <main>
+        <h1>Commandez nos produits</h1>
+        
+        <ul id="pageCommandes">
+
+            <li class="article">
+                <h2>Gelée de groseille</h2>
+                <img src="confitures02.jpg" alt="Photo de pot de gelée de groseille">
+                <p>Prix : 1.99 €</p>
+                <label for="qtt_1">Quantité : </label>
+                <input type="number" id="qtt_1" min="0" max="10">
+            </li>
+
+            <li class="article">
+                <h2>Confiture de cerises</h2>
+                <img src="cerises.jpg" alt="Photo de pot de confiture de cerises">
+                <p>Prix : 1.85 €</p>
+                <label for="qtt_2">Quantité : </label>
+                <input type="number" id="qtt_2" min="0" max="10">
+            </li>
+            
+            <li class="article">
+                <h2>Confiture de pêches</h2>
+                <img src="confitures06.jpg" alt="Photo de pot de confiture de pêches">
+                <p>Prix : 1.53 €</p>
+                <label for="qtt_3">Quantité : </label>
+                <input type="number" id="qtt_3" min="0" max="10">
+            </li>
+            
+            <li class="article">
+                <h2>Confiture de prunes</h2>
+                <img src="confitures07.jpg" alt="Photo de pot de confiture de prunes">
+                <p>Prix : 1.53 €</p>
+                <label for="qtt_4">Quantité : </label>
+                <input type="number" id="qtt_4" min="0" max="10">
+            </li>
+    
+            <li class="article">
+                <h2>Confiture d'abricots</h2>
+                <img src="confitures10.jpg" alt="Photo de pot de confiture d'abricots">
+                <p>Prix : 1.85 €</p>
+                <label for="qtt_5">Quantité : </label>
+                <input type="number" id="qtt_5" min="0" max="10">
+            </li>
+            
+            <li class="article">
+                <h2>Confiture de pommes</h2>
+                <img src="confitures11.jpg" alt="Photo de pot de confiture de pommes">
+                <p>Prix : 1.54 €</p>
+                <label for="qtt_6">Quantité : </label>
+                <input type="number" id="qtt_6" min="0" max="10">
+            </li>
+
+            <li class="article">
+                <h2>Confiture de surreau</h2>
+                <img src="confitures12.jpg" alt="Photo de pot de confiture de surreau">
+                <p>Prix : 2.01 €</p>
+                <label for="qtt_7">Quantité : </label>
+                <input type="number" id="qtt_7" min="0" max="10">
+            </li>
+            
+            <li class="article">
+                <h2>Confiture de figues</h2>
+                <img src="confitures13.jpg" alt="Photo de pot de confiture de figues">
+                <p>Prix : 2.23 €</p>
+                <label for="qtt_8">Quantité : </label>
+                <input type="number" id="qtt_8" min="0" max="10">
+            </li>
+            
+            <li class="article">
+                <h2>Confiture de mandarines</h2>
+                <img src="madarines.jpg" alt="Photo de pot de confiture de mandarines">
+                <p>Prix : 3.12 €</p>
+                <label for="qtt_9">Quantité : </label>
+                <input type="number" id="qtt_9" min="0" max="10">
+            </li>
+
+        </ul>
+
+        <button id="bouton_commander" type="button" onclick="commander()">Commander</button>
+        
+        <div id="divrpc"><p id="reponseCommandes"></p></div>
+    </main>
+
+
+    <footer>
+        <div class="centrageVertical">
+            <h2>Informations</h2>
+            <p>Site web réalisé dans le cadre de la formation<br>
+            <strong>Découverte des métiers de l'informatique</strong><br>
+            <a href="https://youtu.be/dQw4w9WgXcQ">World Wide Ouaip</a>  &copy;2022
+        </div>
+    </footer>
+    <script src="fruitConcept.js"></script>
+</body>
