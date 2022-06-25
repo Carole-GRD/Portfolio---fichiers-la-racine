@@ -17,6 +17,11 @@
     --colorTransparent: #ffffffaa;
 }
 
+/* mise en forme pour le SCROLLSPY */
+.styleScrollSpy{
+    color: var(--colorLightPink);
+    background-color: var(--colorBlack);
+}
 
 /* en javascript */
 html{
