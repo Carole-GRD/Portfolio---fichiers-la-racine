@@ -24,9 +24,10 @@
 }
 
 /* en javascript */
-html{
+/* en CSS => rajouter les href="#home"... dans le HTML !! */
+/* html{
     scroll-behavior: smooth;
-}
+} */
 
 body{
     width: 100vw;
@@ -60,6 +61,7 @@ nav{
 nav img{
     height: 6vh;
     margin-top: 10px;
+    cursor: pointer;
 }
 
 nav ul{
@@ -93,6 +95,7 @@ nav ul li a{
     text-decoration: none;
     font-size: 1.5rem;
     font-weight: 400;
+    cursor: pointer;
 }
 
 

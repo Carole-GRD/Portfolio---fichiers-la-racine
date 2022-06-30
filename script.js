@@ -1,6 +1,5 @@
 // =====================================================================================
 // ------------------  "SCROLL SMOOTH"  --------------------------
-//       NE FONCTIONNE PAS !!!  -> voir en ligne 47 index "-1" !! 
 // =====================================================================================
 
 
@@ -9,8 +8,6 @@
 // raccourci syntaxique qui donne le privilège d'obtenir une liste à partir d'un tableau
 const navLinks = [...document.querySelectorAll('nav a')];
 const sections = [...document.querySelectorAll('section')];
-// console.log(navLinks);
-// console.log(sections);
 
 
 let sectionsPosition;
@@ -19,8 +16,6 @@ let sectionsPosition;
 // ON PLACE CES POSITIONS DANS LA VARIABLE "sectionsPosition" QUE L'ON A DECLAREE CI-DESSUS
 function positionCalculation(){
     sectionsPosition = sections.map(section => section.offsetTop);
-    // console.log(sections);
-    // console.log(sectionsPosition);
 }
 positionCalculation();
 /* REMARQUE :
@@ -39,17 +34,26 @@ car on demande d'effectuer une fonction (qu'on appelle addScollSmooth) à chaque
 
 
 function addScrollSmooth(e){
-    
+    // obtenir l'index du lien sur lequel l'utilisateur a "cliqué"
     const linkIndex = navLinks.indexOf(e.target);
-    /*console.log(linkIndex);*/      /* pourquoi index -1 pour le premier ?? */
-    
-    window.scrollTo({
-        top: sectionsPosition[linkIndex],
-        behavior: "smooth",
-    })    
-    
+    // ATTENTION : le logo a pour index "-1" => il ramène à la section "home" qui a pour index "0" 
+    // ATTENTION : le texte "DEV JS FS" a pour index "0" => il ramène EGALEMENT à la section "home" qui a pour index "0" 
+    if (linkIndex === -1 || linkIndex === 0){
+        window.scrollTo({
+            top: sectionsPosition[0],
+            behavior: "smooth",
+        })  
+    }
+    // ATTENTION : TOUS les index sont décallés de "1" !!
+    else{
+        window.scrollTo({
+            top: sectionsPosition[linkIndex - 1],
+            behavior: "smooth",
+        })  
+    }
 }
 
+// refaire les calculs de position si l'on modifie la taille de l'écran
 window.addEventListener('resize', positionCalculation);
 
 
