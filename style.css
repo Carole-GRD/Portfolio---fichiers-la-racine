@@ -396,7 +396,18 @@ h1{
     width: 100%;
 }
 
-.webDesign:hover .centerTextCard,
+.webDesign:hover .centerTextCard,.inner-projects img:hover{
+    animation: img .25s ease-in-out forwards;
+}
+
+@keyframes img{
+    0%{
+        box-shadow: 10px 10px 10px -1px var(--colorLightBlack);
+    }
+    100%{
+        box-shadow: 17.5px 17.5px 10px -1px var(--colorLightBlack);
+    }
+}
 .frontEnd:hover .centerTextCard,
 .BackEnd:hover .centerTextCard,
 .dataBase:hover .centerTextCard,
@@ -492,21 +503,7 @@ h1{
     box-shadow: 10px 10px 10px -1px var(--colorLightBlack);
 }
 
-.inner-projects img:hover{
-    animation: img 1.5s ease-in-out infinite forwards;
-}
 
-@keyframes img{
-    0%{
-        box-shadow: 10px 10px 10px -1px var(--colorLightBlack);
-    }
-    50%{
-        box-shadow: 17.5px 17.5px 10px -1px var(--colorLightBlack);
-    }
-    100%{
-        box-shadow: 10px 10px 10px -1px var(--colorLightBlack);
-    }
-}
 
 
 

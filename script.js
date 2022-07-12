@@ -99,6 +99,28 @@ function addScrollSpy(e){
 
 
 
+// scrollspy lorsqu'on scroll avec la souris ou le pavé tactile
+
+// A TERMINER !!!!!!!!!!
+
+window.addEventListener('scroll', addScrollSpy2);
+function addScrollSpy2(){
+    if (window.scrollY < 929){
+        console.log('section 1');
+    }
+    if (window.scrollY >= 929 && window.scrollY < 1858){
+        console.log('section 2');
+    }
+    if (window.scrollY >= 1858 && window.scrollY < 2787){
+        console.log('section 3');
+    }
+    if (window.scrollY >= 2787 && window.scrollY < 3716){
+        console.log('section 4');
+    }
+    if (window.scrollY >= 3716){
+        console.log('section 5');
+    }
+}
 
 
 
