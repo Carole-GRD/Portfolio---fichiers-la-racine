@@ -23,8 +23,8 @@
     background-color: var(--colorBlack);
 }
 
-/* en javascript */
-/* en CSS => rajouter les href="#home"... dans le HTML !! */
+/* scrollspy en javascript */
+/* si (scrollspy) ancre en CSS => rajouter les href="#home"... dans le HTML !! */
 /* html{
     scroll-behavior: smooth;
 } */
@@ -248,6 +248,7 @@ h1{
 }
 
 .aboutRight{
+    margin: auto;
     padding-right: 70px;
 }
 
@@ -396,9 +397,9 @@ h1{
     width: 100%;
 }
 
-.webDesign:hover .centerTextCard,.inner-projects img:hover{
+/* .webDesign:hover .centerTextCard,.inner-projects img:hover{
     animation: img .25s ease-in-out forwards;
-}
+} */
 
 @keyframes img{
     0%{
@@ -408,6 +409,8 @@ h1{
         box-shadow: 17.5px 17.5px 10px -1px var(--colorLightBlack);
     }
 }
+
+.webDesign:hover .centerTextCard,
 .frontEnd:hover .centerTextCard,
 .BackEnd:hover .centerTextCard,
 .dataBase:hover .centerTextCard,
@@ -417,7 +420,6 @@ h1{
     
     
 }
-
 
 /* icones présentent sur les cartes*/
 .centerTextCard img{

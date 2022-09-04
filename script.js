@@ -44,7 +44,7 @@ function addScrollSmooth(e){
             behavior: "smooth",
         })  
     }
-    // ATTENTION : TOUS les index sont décallés de "1" !!
+    // ATTENTION : TOUS les index sont décallés de "1"  → d'où [linkIndex - 1]
     else{
         window.scrollTo({
             top: sectionsPosition[linkIndex - 1],
