@@ -658,3 +658,82 @@ option{
     background-color: var(--colorLightPink);
     color: #31383fb0;
 } */
+
+
+
+
+/* +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ */
+/*                      SCREEN HP Pavillon                         */
+/* +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ */
+@media screen and (max-width: 1800px) {
+    /* ======== */
+    /* À propos */
+    /* ======== */
+    #about {
+        margin-top: 0;
+        height: 100vh;
+    }
+    .box-about {    
+        margin-top: 7.5vh;    
+        height: 70vh;
+    }
+    /* =========== */
+    /* Compétences */
+    /* =========== */
+    #competence {
+        margin-top: 0;
+    }
+    #competence h4 {
+        font-size: 1.5rem;
+        font-weight: 400;
+    }
+    .box-competence {
+        margin-top: 2vh;  
+        height: 80vh;
+    }
+    .container-competence {
+        height: 70vh;
+    }
+    .front, .back {
+        width: 210px;
+        height: 210px;
+    }
+    .webDesign,
+    .frontEnd,
+    .BackEnd,
+    .dataBase,
+    .collaborative,
+    .infrastructure {
+        width: 210px;
+        height: 210px;
+        margin: 20px 25px;   
+    }
+    /* ======= */
+    /* Contact */
+    /*======== */
+    #contact {
+        margin-top: 0;
+
+    }
+    .box-contact {   
+        height: 80vh;
+    }
+    form {
+        padding: 1rem;
+        height: 70vh;
+    }
+    
+    #sendMessage{
+        margin-top: -3rem;
+    }
+    select,
+    input,
+    textarea{
+        padding:  10px 0 10px 10px;
+    }
+
+
+    .homeFooter, .contactFooter {
+        padding-bottom: 0.5rem;
+    }
+}
