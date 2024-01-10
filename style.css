@@ -139,16 +139,19 @@ nav ul li a{
 
 h1{
     font-weight: 400;
-    font-size: 2rem;
+    /* font-size: 2rem; */
+    font-size: 2.1rem;
 }
 
 .text-home p{
     font-weight: 700;
-    font-size: 2.2rem;
+    /* font-size: 2.2rem; */
+    font-size: 2.8rem;
 }
 
 .text-home span{
-    font-size: .5rem;
+    /* font-size: .5rem; */
+    font-size: .8rem;
 }
 
 #home img{
@@ -283,7 +286,7 @@ h1{
 
 
 #myCV:hover{
-    background-color: var(--colorPink);
+    background-color: var(--colorLightBlack);
     color: var(--colorLightPink);  
     font-weight: 600;
     font-size: 1.2rem;
@@ -616,8 +619,8 @@ textarea{
 
 
 #sendMessage:hover{
-    background-color: var(--colorPink);
-    color: var(--colorLightPink);    
+    background-color: var(--colorBlack);
+    color: var(--colorLightPink);   
 } 
 
 option{
