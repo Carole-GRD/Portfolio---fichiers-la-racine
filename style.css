@@ -461,7 +461,7 @@ h1{
     display: flex;
     justify-content: space-around;
     margin: 50px 0;
-    height: 500px;
+    height: 530px;
     border: 3px solid var(--colorLightBlack);
     border-radius: 10px;
 }
@@ -508,6 +508,10 @@ h1{
     box-shadow: 10px 10px 10px -1px var(--colorLightBlack);
 }
 
+.inner-projects article:last-of-type img{
+    max-width: 200px;
+}
+
 
 
 
@@ -516,10 +520,35 @@ h1{
 /* =======================  section contact ========================= */
 #contact{
     position: relative;
+    z-index: 1;
     height: 100vh;
     color: var(--colorLightPink);
     background-color: var(--colorBlack);
+    overflow: hidden; /* Pour éviter que le filtre flou ne s'étende au-delà de la section */
+    /* filter: blur(2px); */
+    backdrop-filter: blur(2px);
 }
+
+
+
+.progress {
+    position: absolute;
+    z-index: 2; /* Un niveau au-dessus de #contact */
+    background-color: #dd8ea4;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) rotate(-15deg);
+    padding: 50px 200px;
+    /* backdrop-filter: blur(2px); */
+    
+}
+.progress p {
+    font-size: 2rem;
+}
+.progress p a {
+    color: #435160;
+}
+
 
 .box-contact{
     position: relative;
@@ -528,6 +557,7 @@ h1{
     left: 50%;
     transform: translate(-50%,-50%);
     /* border: 3px solid green; */
+
 }
 
 #contact h2{
