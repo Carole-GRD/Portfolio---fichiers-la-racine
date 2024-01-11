@@ -3,6 +3,15 @@
 // =====================================================================================
 
 
+let scrollEnabled = true;
+
+function disableScroll() {
+    scrollEnabled = false;
+    setTimeout(() => {
+        scrollEnabled = true;
+    }, 1200); // Délai (en ms) pour désactiver temporairement le scroll
+}
+
 // à quoi servent les 3 points devant 'document' ?
 // attribut de propagation qui permettent de développer une expression
 // raccourci syntaxique qui donne le privilège d'obtenir une liste à partir d'un tableau
@@ -14,7 +23,7 @@ let sectionsPosition;
 // MAP() RENVOIE UN TABLEAU 
 // -> DANS CE CAS, UN TABLEAU DES POSITIONS DE CHAQUE SECTION
 // ON PLACE CES POSITIONS DANS LA VARIABLE "sectionsPosition" QUE L'ON A DECLAREE CI-DESSUS
-function positionCalculation(){
+function positionCalculation() {
     sectionsPosition = sections.map(section => section.offsetTop);
 }
 positionCalculation();
@@ -33,23 +42,59 @@ Dans ce cas, on les appelle "link", cela a du sens
 car on demande d'effectuer une fonction (qu'on appelle addScollSmooth) à chaque fois que l'on clique sur un lien. */
 
 
-function addScrollSmooth(e){
+function addScrollSmooth(e) {
+
     // obtenir l'index du lien sur lequel l'utilisateur a "cliqué"
     const linkIndex = navLinks.indexOf(e.target);
     // ATTENTION : le logo a pour index "-1" => il ramène à la section "home" qui a pour index "0" 
     // ATTENTION : le texte "DEV JS FS" a pour index "0" => il ramène EGALEMENT à la section "home" qui a pour index "0" 
-    if (linkIndex === -1 || linkIndex === 0){
+    if (linkIndex === -1 || linkIndex === 0 || linkIndex === 1) {
+        disableScroll(); // Désactive le scroll temporairement
         window.scrollTo({
             top: sectionsPosition[0],
             behavior: "smooth",
-        })  
+        })
+        resetAnimation('.text-home');
     }
     // ATTENTION : TOUS les index sont décallés de "1"  → d'où [linkIndex - 1]
-    else{
+    else {
+        disableScroll(); // Désactive le scroll temporairement
         window.scrollTo({
             top: sectionsPosition[linkIndex - 1],
             behavior: "smooth",
-        })  
+        })
+    }
+
+}
+
+function resetAnimation(selector) {
+    const element = document.querySelector(selector);
+    console.log(element);
+
+    // Supprimez la classe d'animation actuelle
+    element.style.animation = 'none';
+
+    // Forcez un recalcul du style pour déclencher une réinitialisation
+    void element.offsetWidth;
+
+    // Réappliquez la classe d'animation
+    element.style.animation = '1.2s ease-in-out forwards text-home';
+}
+
+// Ajoutez un gestionnaire d'événements pour l'événement scroll
+window.addEventListener('scroll', handleScroll);
+
+function handleScroll() {
+    if (!scrollEnabled) {
+        return; // Ne fait rien si le scroll est désactivé temporairement
+    }
+
+    // Obtenez la position actuelle de défilement
+    const scrollPosition = window.scrollY;
+
+    // Si la position de défilement est en haut de la page, réinitialisez l'animation
+    if (scrollPosition === 0) {
+        resetAnimation('.text-home');
     }
 }
 
@@ -71,7 +116,7 @@ const navLinksLi = [...document.querySelectorAll('nav li')];
 
 // L'ONGLET "HOME" DOIT AVOIR LE STYLE AU CHARGEMENT DE LA PAGE
 window.addEventListener('load', loadStyleHome);
-function loadStyleHome(){
+function loadStyleHome() {
     navLinks[1].classList.add('styleScrollSpy');
     navLinksLi[1].classList.add('styleScrollSpy');
 }
@@ -79,19 +124,19 @@ function loadStyleHome(){
 
 // ATTENTION : l'Array "navLinks" est créé dans le code SCROLL SMOOTH (ligne 8)
 navLinks.forEach(link => link.addEventListener('click', addScrollSpy));
-function addScrollSpy(e){
-    for (let i = 0; i < navLinks.length; i++){
+function addScrollSpy(e) {
+    for (let i = 0; i < navLinks.length; i++) {
         // retirer le style de tous les liens
         navLinks[i].classList.remove('styleScrollSpy');
         navLinksLi[i].classList.remove('styleScrollSpy');
         // obtenir l'index du lien cliqué
         const linkIndex = navLinks.indexOf(e.target);
         // ajouter le style au lien cliqué
-        if (linkIndex >= 1){                                         /* pour éviter l'index "-1" */
+        if (linkIndex >= 1) {                                         /* pour éviter l'index "-1" */
             navLinks[linkIndex].classList.add('styleScrollSpy');
             navLinksLi[linkIndex].classList.add('styleScrollSpy');
         }
-        if (linkIndex == -1){
+        if (linkIndex == -1) {
             loadStyleHome();
         }
     }
@@ -104,20 +149,20 @@ function addScrollSpy(e){
 // A TERMINER !!!!!!!!!!
 
 window.addEventListener('scroll', addScrollSpy2);
-function addScrollSpy2(){
-    if (window.scrollY < 929){
+function addScrollSpy2() {
+    if (window.scrollY < 929) {
         console.log('section 1');
     }
-    if (window.scrollY >= 929 && window.scrollY < 1858){
+    if (window.scrollY >= 929 && window.scrollY < 1858) {
         console.log('section 2');
     }
-    if (window.scrollY >= 1858 && window.scrollY < 2787){
+    if (window.scrollY >= 1858 && window.scrollY < 2787) {
         console.log('section 3');
     }
-    if (window.scrollY >= 2787 && window.scrollY < 3716){
+    if (window.scrollY >= 2787 && window.scrollY < 3716) {
         console.log('section 4');
     }
-    if (window.scrollY >= 3716){
+    if (window.scrollY >= 3716) {
         console.log('section 5');
     }
 }
